@@ -1,0 +1,51 @@
+# _target_: ${cspnet_target}
+# hidden_dim: 512
+# latent_dim: 256
+# max_atoms: 100
+# num_layers: 6
+# act_fn: silu
+# dis_emb: sin
+# num_freqs: 128
+# # modification
+# edge_style: knn
+# # modification
+# max_neighbors: ${model.max_neighbors}
+# cutoff: ${model.radius}
+# ln: true
+# ip: ${csp_ip}
+# type_mlp: false
+
+### polynet_new
+# _target_: ${cspnet_target}
+# hidden_dim: 512 ### default is 512
+# latent_dim: 256
+# max_atoms: 100
+# num_layers: 6 ### default is 6
+# act_fn: silu
+# dis_emb: sin
+# num_freqs: 128
+# # modification
+# edge_style: fc ### fc or knn
+# # modification
+# max_neighbors: ${model.max_neighbors}
+# cutoff: ${model.radius}
+# ln: true
+# # ip: ${csp_ip}
+# # type_mlp: false
+# dropout: 0.0
+
+### egnn_pyg
+_target_: ${cspnet_target}
+hidden_dim: 128 ### default is 512
+latent_dim: 128 ### default is 256
+num_layers: 4 ### default is 6
+tanh: false
+ln: false
+dropout: 0.0
+normalization_factor: 1.0
+
+act_fn: "silu"
+edge_style: "fc"
+cutoff: 6.0
+residual: true
+attention: false
